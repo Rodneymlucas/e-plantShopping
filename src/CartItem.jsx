@@ -6,21 +6,20 @@ import './CartItem.css';
 const CartItem = ({ onContinueShopping }) => {
   const cart = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
-//Dispacth the updateQuantity action to update the quantity of the cart item
-//Dispatch the addItem action to add an item to the cart
-//Dispatch the removeItem action to remove an item from the cart
+  //Dispacth the updateQuantity action to update the quantity of the cart item
+  //Dispatch the addItem action to add an item to the cart
+  //Dispatch the removeItem action to remove an item from the cart
 
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
- //iterate trhough the item array, find the quantity of each item using the item.quantity propery and multiply it by the item.cost property. Add all the results together and return the total amount.    
-cart.map(item => {item.quantity * item.cost}).reduce((a, b) => a + b, 0); 
-};
+    //iterate trhough the item array, find the quantity of each item using the item.quantity propery and multiply it by the item.cost property. Add all the results together and return the total amount.    
+    return cart.reduce((total, item) => total + item.quantity * Number(item.cost.replace('$', '')), 0);
+  };
 
   const handleContinueShopping = (e) => {
-//call the function passed by the parent compponent to the child component as a prop  
-alert('Click on Plants at the top of the screen to continue shopping');
-    console.log('Continue Shopping');
+    //call the function passed by the parent compponent to the child component as a prop  
+    alert('This functionality is not implemented yet');
   };
 
 
@@ -35,7 +34,7 @@ alert('Click on Plants at the top of the screen to continue shopping');
     // Dispatch an action to update the quantity of the item
     dispatch(updateQuantity({ name: item.name, quantity: item.quantity - 1 }));
     console.log('Decrement');
-   
+
   };
 
   const handleRemove = (item) => {
@@ -45,11 +44,13 @@ alert('Click on Plants at the top of the screen to continue shopping');
   };
 
   const handleCheckoutShopping = (e) => {
-    alert('Functionality to be added for future reference');
+    alert('This functionality is not implemented yet');
+
   };
 
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {
+    return item.quantity * Number(item.cost.replace('$', ''));
   };
 
   console.log('in the CartItem component');
@@ -78,7 +79,7 @@ alert('Click on Plants at the top of the screen to continue shopping');
       <div className="continue_shopping_btn">
         <button className="get-started-button" onClick={(e) => handleContinueShopping(e)}>Continue Shopping</button>
         <br />
-        <button className="get-started-button1" onClick={(e) =>handleCheckoutShopping(e)}>Checkout</button>
+        <button className="get-started-button1" onClick={(e) => handleCheckoutShopping(e)}>Checkout</button>
       </div>
     </div>
   );
