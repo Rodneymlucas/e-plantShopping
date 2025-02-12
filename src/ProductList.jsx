@@ -7,6 +7,10 @@ function ProductList() {
     const [showCart, setShowCart] = useState(false);
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({});
+    //initialize the cart items state in the Redux store
+    //dispatch the addItem reducer to add the product to the cart
+    //retrieve the quantity of all items in the cart from the Redux store
+    
     const plantsArray = [
         {
             category: "Air Purifying Plants",

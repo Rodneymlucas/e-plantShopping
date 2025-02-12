@@ -6,6 +6,10 @@ import './CartItem.css';
 const CartItem = ({ onContinueShopping }) => {
   const cart = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
+//Dispacth the updateQuantity action to update the quantity of the cart item
+//Dispatch the addItem action to add an item to the cart
+//Dispatch the removeItem action to remove an item from the cart
+
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
