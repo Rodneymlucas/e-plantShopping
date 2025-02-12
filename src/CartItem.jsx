@@ -9,23 +9,30 @@ const CartItem = ({ onContinueShopping }) => {
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
- 
+ //iterate trhough the item array, find the quantity of each item using the item.quantity propery and multiply it by the item.cost property. Add all the results together and return the total amount.    
   };
 
   const handleContinueShopping = (e) => {
-   
+//call the function passed by the parent compponent to the child component as a prop   
   };
 
 
 
   const handleIncrement = (item) => {
+    // Dispatch an action to update the quantity of the item
   };
 
   const handleDecrement = (item) => {
+    // Dispatch an action to update the quantity of the item
    
   };
 
   const handleRemove = (item) => {
+    // Dispatch an action to remove the item from the cart
+  };
+
+  const handleCheckoutShopping = (e) => {
+    alert('Functionality to be added for future reference');
   };
 
   // Calculate total cost based on quantity for an item
